@@ -21,3 +21,5 @@ La VPN se utiliza para peticiones a los modelos de IA. El transporte de archivos
 Esta última comprobación acredita recuperación de archivos y base de datos; el arranque de un servidor restaurado es una prueba distinta. La excepción no habilita futuras lecturas. Claves, rutas reales, configuración y contenido privado permanecen fuera de este repositorio.
 
 [Proyecto](README.md) · [Formato age](https://github.com/FiloSottile/age)
+
+El router FreeLLMAPI mantiene su base de solicitudes y registros en RAM, con caché de respuestas deshabilitada. Solo se habilitan rutas de inferencia cuyo acceso gratuito se haya verificado. Una prueba completa remota ya produjo una entrega cifrada con revisión interna aprobada.
