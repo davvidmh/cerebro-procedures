@@ -30,6 +30,8 @@ La política posterior para nuevas devoluciones exige paquetes cifrados para el 
 
 ## Principios de privacidad
 
+Las nuevas entregas incorporan una auditoría interna de cada entregable y criterio de aceptación. Si faltan elementos, el constructor recibe correcciones y vuelve a consolidar el trabajo, con rondas limitadas por el presupuesto autorizado. La instrucción exige explorar alternativas ante dificultades, conservar el objetivo y no inventar evidencia. Agotar límites o carecer de una capacidad requerida produce una entrega marcada como incompleta. Una revisión favorable del modelo no equivale a pruebas ejecutadas ni garantiza corrección total; la recepción del cifrado y la aceptación del trabajo son estados distintos. Las devoluciones anteriores no reciben aprobación retroactiva.
+
 Un servicio local de acceso a modelos no vuelve local el procesamiento de sus proveedores remotos. Los contenidos privados requieren destinos expresamente permitidos, y los que deban permanecer desconocidos para un proveedor no se envían a él. La conexión SSH protege el transporte; la protección en reposo y durante el procesamiento necesita controles adicionales.
 
 La documentación pública se redacta por separado de los repositorios privados; no se publican sus historiales. Cada herramienta candidata se evalúa antes de incorporarse, sin instalar recursos únicamente por estar disponibles.
