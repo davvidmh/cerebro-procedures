@@ -16,4 +16,4 @@ Colmena de IA en Oracle: operación por consola, tareas revisadas y entregas cif
 
 **Conexiones:** la VPN se destina al acceso a los proveedores de IA y la continuidad de las peticiones. Los archivos se transfieren por SSH; la VPN no forma parte de ese transporte.
 
-[Decisiones técnicas](OCI_WORKAROUNDS.md) · [Recuperación SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide) · [Piloto Java](https://github.com/davvidmh/java-one-way-hash-demo)
+[Cifrado privado y evidencia](PRIVACIDAD_Y_CIFRADO.md) · [Decisiones técnicas](OCI_WORKAROUNDS.md) · [Recuperación SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide) · [Piloto Java](https://github.com/davvidmh/java-one-way-hash-demo)
