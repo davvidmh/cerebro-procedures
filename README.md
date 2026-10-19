@@ -10,8 +10,10 @@ Colmena de IA en Oracle: operación por consola, tareas revisadas y entregas cif
 - Resultados comprimidos y cifrados con age. El coordinador comprueba metadatos y no abre las devoluciones.
 - La auditoría exige evidencia por criterio. Un avance incompleto conserva ese estado.
 
-**Comprobado:** piloto Java, flujos sintéticos con IA real, transferencia cifrada, recorrido mediante VPN y corrección iterativa probada con casos sintéticos. No demuestra ejecución autónoma de cualquier proyecto.
+**Autonomía:** el diseño persigue una colmena completamente autónoma: una vez autorizada una tarea concreta, debe planificar, elaborar, revisar, corregir y devolver el trabajo sin operación manual del servidor.
 
-**Límites:** el ejecutor actual entrega texto/workflows, sin ejecutar comandos generados. Cuota gratuita no significa disponibilidad continua. El respaldo cifrado y la aceptación de resultados requieren comprobación privada del destinatario.
+**Comprobado:** piloto Java, flujos sintéticos con IA real, transferencia cifrada por SSH y corrección iterativa con casos sintéticos. También se comprobaron peticiones a los modelos mediante una salida VPN por aplicación.
+
+**Conexiones:** la VPN se destina al acceso a los proveedores de IA y la continuidad de las peticiones. Los archivos se transfieren por SSH; la VPN no forma parte de ese transporte.
 
 [Decisiones técnicas](OCI_WORKAROUNDS.md) · [Recuperación SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide) · [Piloto Java](https://github.com/davvidmh/java-one-way-hash-demo)
