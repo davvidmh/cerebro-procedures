@@ -1,8 +1,8 @@
-# Cerebro: procedimientos de orquestación
+# OCI Workarounds · Orquestación por consola
 
 Documentación pública general de un sistema que coordina trabajos de inteligencia artificial desde un servidor, mediante consola y SSH. No contiene configuración privada, conversaciones, credenciales o datos internos de los proyectos.
 
-**Para evaluación técnica y reclutamiento:** [caso técnico de David (@davvidmh)](CASO_TECNICO.md), con decisiones de arquitectura, contribución del responsable, implementación asistida, evidencia pública y límites de lo completado.
+[OCI Workarounds](OCI_WORKAROUNDS.md): notas de infraestructura, decisiones de arquitectura y pruebas del recorrido remoto.
 
 ## Jerarquía
 
