@@ -10,7 +10,7 @@ El punto de partida fue aprovechar recursos de coste contenido y conservar acces
 |---|---|---|
 | Continuidad del acceso tras perder una clave local | Recuperar el acceso conservando la verificación de identidad y retirar permisos temporales | [Procedimiento público de recuperación SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide). |
 | Muchos recursos disponibles y una máquina limitada | Evaluar todos los candidatos y desplegar solo los que resuelven una necesidad vigente | Las referencias sin demanda, por ejemplo una aplicación contable de otro proyecto, quedan fuera del servidor. |
-| Repartir trabajo entre varios ejecutores | Separar dirección, herramientas de orquestación y funciones específicas | El coordinador básico funciona; la integración de roles y workers persistentes sigue pendiente. |
+| Repartir trabajo entre varios ejecutores | Separar dirección, herramientas de orquestación y funciones específicas | Servicios persistentes y roles adaptados de ECC; el recorrido de tres etapas con inferencia real regresó cifrado. |
 | Servidor sin una persona operando ventanas | Usar consola, cola persistente y transferencias por SSH | El piloto se ejecutó y validó en Oracle, con devolución por SSH. |
 | Una prueba en el equipo cliente no demuestra ejecución en Oracle | Exigir evidencia del entorno correcto | Los intentos locales iniciales fallaron y no se contabilizan. La entrega publicada procede de un worker y pruebas posteriores en Oracle. |
 | Tareas ambiguas y resultados difíciles de atribuir | Exigir objetivo, límites, entregable, verificaciones e identificador | Convención local preparada; admisión y transporte automáticos aún en desarrollo. |
@@ -37,12 +37,20 @@ La pregunta sobre una transformación no inyectiva permitió precisar la diferen
 
 Ese ejemplo no cifra archivos privados ni protege contraseñas. Los paquetes recuperables necesitan cifrado autenticado y custodia de claves. Una pasarela local hacia modelos externos tampoco convierte en local el procesamiento de esos proveedores.
 
-Las nuevas devoluciones siguen una política distinta del piloto público: el coordinador conversacional no abre su contenido; su revisión corresponde al destinatario o a un ejecutor privado autorizado. Una comprobación posterior generó datos aleatorios en memoria en Oracle, los cifró con age para la clave pública del destinatario y verificó la huella del archivo cifrado tras transferirlo. No se publicó ni descifró ese contenido. El descifrado de comprobación por el destinatario y la integración general siguen pendientes.
+Las nuevas devoluciones siguen una política distinta del piloto público: el coordinador conversacional no abre su contenido; su revisión corresponde al destinatario o a un ejecutor privado autorizado. Una comprobación posterior generó datos aleatorios en memoria en Oracle, los cifró con age y verificó la huella del archivo cifrado tras transferirlo. El destinatario confirmó personalmente la huella del descifrado; el coordinador no accedió a su identidad privada. También regresó una respuesta real de IA cifrada, cuya recepción se comprobó solo por metadatos.
 
 Los requisitos físicos ausentes se mantienen como bloqueos y las ideas de investigación opcionales no desplazan el trabajo de infraestructura pendiente.
 
-## Próximos pasos
+## Validación operativa
 
-Completar roles y permisos por worker, verificar devolución cifrada, automatizar la admisión de peticiones concretas y comprobar recuperación ante desconexión. Los criterios y pruebas completadas se publican por separado de las conversaciones y de los proyectos privados.
+La recepción usa destinos registrados y rechaza recorridos fuera de ellos. Modificar una solicitud invalida la revisión anterior; repetir su envío no duplica trabajo. El ejecutor tiene una cuenta distinta del coordinador, sin poder leer su base ni invocar acciones administrativas. Los roles comparten esa cuenta: no se presenta como aislamiento de seguridad entre ellos.
+
+El paquete se comprime en memoria y se cifra antes de guardarse. Primero se comprobó el empaquetado sin modelos; después pasó el recorrido real de tres etapas por un adaptador web alternativo de g4f, tras registrar el límite de otro proveedor. Una segunda prueba completa pasó por una salida WARP por aplicación. Ambas llegaron cifradas con la huella correcta, sin revisión de contenido por el coordinador. Se conservaron respaldos cifrados consistentes y recepción al reiniciar el equipo local; no se presenta como probada una restauración que requiera la clave privada del destinatario.
+
+La VPN se limita al proxy local y conserva la conexión de administración. El ejecutor distingue fallos de conectividad y cuotas: utiliza solo intermediarios/proveedores aprobados y aplica espera ante límites de uso. Los proveedores tienen bloqueos independientes para permitir concurrencia sin mezclar sesiones. No se promete capacidad ilimitada ni se atribuye un modelo concreto sin evidencia del origen.
+
+La implementación actual entrega workflows y texto con contexto expresamente permitido. No ejecuta comandos generados, no recoge archivos privados automáticamente ni aplica resultados. Las herramientas específicas siguen necesitando una petición real. La memoria de disponibilidad de proveedores no equivale a reentrenar modelos ni a aprender contenido que permanece cifrado.
+
+Referencias técnicas: [ECC](https://github.com/affaan-m/ECC), [GPT4Free](https://github.com/xtekky/gpt4free), [age](https://github.com/FiloSottile/age). Los criterios y pruebas completadas se publican por separado de las conversaciones y de los proyectos privados.
 
 [Procedimiento general](README.md) · [Guía SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide) · [Piloto Java](https://github.com/davvidmh/java-one-way-hash-demo)
