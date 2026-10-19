@@ -20,3 +20,7 @@ Recepción, aprobación interna del modelo y aceptación del destinatario son es
 La autonomía completa guía la arquitectura: el usuario define el encargo y la colmena coordina su resolución, revisión y devolución. La VPN se aplica a la comunicación con los modelos; el transporte de archivos utiliza SSH. El destinatario conserva el control de la clave y de la aceptación final de sus entregables.
 
 [Procedimiento SSH](https://github.com/davvidmh/oracle-ssh-recovery-guide) · [ECC](https://github.com/affaan-m/ECC) · [g4f](https://github.com/xtekky/gpt4free) · [age](https://github.com/FiloSottile/age)
+
+## Ejecución sin escritorio
+
+Las sesiones de navegador necesarias para un proveedor se ejecutan aisladas en Oracle, sin interfaz gráfica, con sandbox y acceso de control limitado a localhost. Cada sesión se elimina al terminar. Los workers tienen límites de memoria y procesos; los reintentos respetan la espera de cada proveedor. La revisión interna exige evidencia por criterio antes de declarar un entregable consolidado.
