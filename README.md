@@ -2,6 +2,8 @@
 
 Documentación pública general de un sistema que coordina trabajos de inteligencia artificial desde un servidor, mediante consola y SSH. No contiene configuración privada, conversaciones, credenciales o datos internos de los proyectos.
 
+**Para evaluación técnica y reclutamiento:** [caso técnico de David (@davvidmh)](CASO_TECNICO.md), con decisiones de arquitectura, contribución del responsable, implementación asistida, evidencia pública y límites de lo completado.
+
 ## Jerarquía
 
 El usuario define objetivos y permisos. El coordinador principal interpreta el encargo durante sus sesiones. Las herramientas de orquestación administran cola y estado. Los workers tienen roles y entregas concretas. Las herramientas específicas se incorporan cuando una tarea real las justifica.
@@ -13,8 +15,8 @@ Una biblioteca de habilidades no sustituye a los modelos ni al ejecutor: roles e
 1. Formular una petición concreta con alcance, entregables, pruebas y límites.
 2. Revisarla antes de autorizar el envío; modificarla invalida la revisión anterior.
 3. Ejecutar en el servidor con herramientas de consola y proveedores autorizados para ese contenido.
-4. Revisar el resultado y ejecutar pruebas con evidencia real. Los errores se conservan como errores.
-5. Devolver un paquete compacto por SSH, comprobar su integridad y revisar antes de incorporar cambios al proyecto destino.
+4. Ejecutar pruebas en el entorno autorizado y conservar evidencia real. Los errores se conservan como errores. La revisión de contenido de nuevas devoluciones corresponde al destinatario o a su ejecutor privado, no al coordinador conversacional.
+5. Devolver un paquete compacto cifrado por SSH al proyecto correcto; el coordinador comprueba únicamente sus metadatos externos e integridad. Ese flujo cifrado sigue pendiente de verificación.
 
 ## Primer experimento público
 
