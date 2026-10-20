@@ -12,7 +12,7 @@ Colmena de IA en Oracle: operación por consola, tareas revisadas y entregas cif
 
 **Autonomía:** el diseño persigue una colmena completamente autónoma: una vez autorizada una tarea concreta, debe planificar, elaborar, revisar, corregir y devolver el trabajo sin operación manual del servidor.
 
-**Comprobado:** prueba completa con FreeLLMAPI, revisión interna y recepción cifrada sin apertura; piloto Java, flujos sintéticos con IA real, transferencia cifrada por SSH y corrección iterativa. También se comprobaron peticiones a los modelos mediante una salida VPN por aplicación.
+**Comprobado:** cuatro proveedores anónimos respondieron desde Oracle. Una tarea de investigación completó planificación, elaboración, revisión interna y recepción cifrada sin apertura. También se verificaron el piloto Java, flujos sintéticos, corrección iterativa y salida VPN para peticiones de IA. La aceptación privada del contenido corresponde al destinatario.
 
 **Conexiones:** la VPN se destina al acceso a los proveedores de IA y la continuidad de las peticiones. Los archivos se transfieren por SSH; la VPN no forma parte de ese transporte.
 
