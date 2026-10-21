@@ -5,7 +5,7 @@ Colmena de IA en Oracle: operación por consola, tareas revisadas y entregas cif
 **Flujo:** petición concreta → revisión → planificación → elaboración → auditoría interna y correcciones → devolución cifrada por SSH → aceptación privada del destinatario.
 
 - Servicios persistentes, cola única y roles adaptados de ECC.
-- Inferencia mediante g4f y FreeLLMAPI en el servidor; herramientas específicas solo cuando una tarea las justifica.
+- Inferencia en el servidor mediante modelos de alta capacidad seleccionados en FreeLLMAPI; sin sustitución automática por modelos pequeños. Herramientas específicas solo bajo demanda.
 - Solicitudes ligadas a su huella; repetir un envío no duplica trabajo.
 - Resultados comprimidos y cifrados con age. El coordinador comprueba metadatos y no abre las devoluciones.
 - La auditoría exige evidencia por criterio. Un avance incompleto conserva ese estado.
